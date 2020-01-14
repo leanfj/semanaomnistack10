@@ -1,5 +1,7 @@
 const express = require('express');
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+
+const routes = require('./routes')
 
 const app = express();
 
@@ -14,18 +16,6 @@ app.use(express.json())
 //Route params: req.params - (Identificar um recurso para alteração ou remoção)
 //Body: req.body - ()
 
-app.get('/', (req, res, next) => {
-    console.log(req.query);
-    return res.json({version: "1.0.0"});
-});
-
-
-app.delete('/user/:id', (req, res, next) => {
-    console.log(req.params);
-});
-
-app.post('/user', (req, res, next) => {
-    console.log(req.body);
-})
+app.use(routes);
 
 app.listen(3333);
