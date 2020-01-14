@@ -1,9 +1,11 @@
 const { Router } = require('express');
+const axios = require('axios')
 
 const routes = Router();
 
-routes.get('/', (req, res, next) => {
-    return res.json(req.query);
+routes.post('/developers', (req, res, next) => {
+    const { github_user } = req.body;
+
 });
 
 
