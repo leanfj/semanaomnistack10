@@ -3,6 +3,7 @@ import React from "react";
 import "./global.css";
 import "./App.css";
 import "./sidebar.css";
+import "./main.css";
 
 function App() {
   return (
@@ -33,6 +34,36 @@ function App() {
       </aside>
       <main>
         <ul>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars3.githubusercontent.com/u/11803606?s=460&v=4"
+                alt="Leandro Ferreira"
+              />
+              <div className="user-info">
+                <strong>Leandro Ferreira</strong>
+                <span>ReactJs, NodeJS</span>
+              </div>
+            </header>
+            <p>Desenvolvedor de Software Full Stack</p>
+            <a href="https://github.com/leanfj">Acessar perfil do Github</a>
+          </li>
+
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars3.githubusercontent.com/u/11803606?s=460&v=4"
+                alt="Leandro Ferreira"
+              />
+              <div className="user-info">
+                <strong>Leandro Ferreira</strong>
+                <span>ReactJs, NodeJS</span>
+              </div>
+            </header>
+            <p>Desenvolvedor de Software Full Stack</p>
+            <a href="https://github.com/leanfj">Acessar perfil do Github</a>
+          </li>
+
           <li className="dev-item">
             <header>
               <img
