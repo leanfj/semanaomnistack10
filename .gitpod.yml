@@ -4,12 +4,6 @@ vscode:
 image:
   file: .gitpod.Dockerfile
 
-tasks:
-  - before: export DANGEROUSLY_DISABLE_HOST_CHECK=true
-  - init: npm install
-    command: cd web
-  - command: npm start
-
 ports:
   - port: 3000
     onOpen: open-preview
