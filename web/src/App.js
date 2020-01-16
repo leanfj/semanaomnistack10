@@ -1,7 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import './global.css';
-import './App.css';
+import "./global.css";
+import "./App.css";
+import "./sidebar.css";
 
 function App() {
   return (
@@ -30,7 +31,24 @@ function App() {
           <button type="submit">Salvar</button>
         </form>
       </aside>
-      <main></main>
+      <main>
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img
+                src="https://avatars3.githubusercontent.com/u/11803606?s=460&v=4"
+                alt="Leandro Ferreira"
+              />
+              <div className="user-info">
+                <strong>Leandro Ferreira</strong>
+                <span>ReactJs, NodeJS</span>
+              </div>
+            </header>
+            <p>Desenvolvedor de Software Full Stack</p>
+            <a href="https://github.com/leanfj">Acessar perfil do Github</a>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
