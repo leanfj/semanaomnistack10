@@ -1,16 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
-const routes = require('./routes')
+const routes = require('./routes');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://leanfj:leanfj@cluster0-ipytm.mongodb.net/test?retryWrites=true&w=majority', {
+mongoose.connect(
+  'mongodb+srv://leanfj:leanfj@cluster0-ipytm.mongodb.net/test?retryWrites=true&w=majority',
+  {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
+  }
+);
 
-app.use(express.json())
+app.use(cors());
+app.use(express.json());
 
 //Query params: req.query - (Filtros, ordenação, paginação)
 //Route params: req.params - (Identificar um recurso para alteração ou remoção)
