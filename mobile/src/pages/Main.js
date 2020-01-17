@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import MapView, { Marker, Callout } from 'react-native-maps';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import React, { useEffect, useState } from "react";
+import MapView, { Marker, Callout } from "react-native-maps";
+import { StyleSheet, Text, View, Dimensions, Image } from "react-native";
 import {
   requestPermissionsAsync,
   getCurrentPositionAsync
-} from 'expo-location';
+} from "expo-location";
 
-function Main() {
+function Main({ navigation }) {
   const [currentRegion, setCurrentRegion] = useState(null);
   useEffect(() => {
     async function loadInitialPosition() {
@@ -40,13 +40,18 @@ function Main() {
           <Image
             source={{
               uri:
-                'https://avatars3.githubusercontent.com/u/11803606?s=460&v=4',
+                "https://avatars3.githubusercontent.com/u/11803606?s=460&v=4",
               height: 45,
               width: 45
             }}
             style={styles.avatar}
           ></Image>
-          <Callout style={styles.callout}>
+          <Callout
+            style={styles.callout}
+            onPress={() => {
+              navigation.navigate("Profile", { github_username: "leanfj" });
+            }}
+          >
             <View>
               <Text style={styles.devName}>Leandro Ferreira</Text>
               <Text style={styles.devBio}>FullStack Developer</Text>
@@ -60,8 +65,8 @@ function Main() {
 }
 const styles = StyleSheet.create({
   mapStyle: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height
   },
   avatar: {
     borderRadius: 50
@@ -70,10 +75,10 @@ const styles = StyleSheet.create({
     width: 200
   },
   devName: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 16
   },
-  devBio: { color: '#666', marginTop: 5 },
+  devBio: { color: "#666", marginTop: 5 },
   devTechs: { marginTop: 5 }
 });
 export default Main;
