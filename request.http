@@ -4,3 +4,6 @@ content-type: application/json
 {
     "github_username": "leanfj"
 }
+
+###
+GET http://localhost:3333/developers HTTP/1.1
